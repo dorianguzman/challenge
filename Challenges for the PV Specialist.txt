@@ -1,0 +1,79 @@
+# Challenge 1: The performance Ratio is a very common KPI used to monitor the
+overall status of a PV system. The accuracy of PR calculation might be affected
+by the input data used.
+1. Calculate the PR* value using the hi-fi measurements of Plane-of-Array (POA)
+irradiance, module's temperature (MT) and module's output power.
+2. Calculate the PR* value for the clear sky moments using the estimated clear
+sky POA irradiance (POA_Clearsky) and the estimated values of module temperature
+(MT_est).
+3. Perform an accuracy analysis between the estimated and the hi-fi PR values.
+4. (Optional) Show how to identify the clear sky moments using the function
+available at the PV_LIB (https://pypi.org/project/pvlib/).
+
+Available data:
+High fidelity POA irradiance (POA_hifi)
+High fidelity module temperature (MT_hifi)
+Estimated clear sky POA irradiance (POA_Clearsky)
+Estimated module temperature (MT_est)
+Module's output power (P)
+Clear sky index (ClearSky)
+System coordinates: 46.0268611 N, 8.9613879 E
+
+* Use the PR formula with temperature correction.
+
+
+# Challenge 2: During the month of June, a connector failure in the form of a
+contact resistance increase was introduced in a testing PV system. Using the
+available data, perform the following analysis:
+1. Identify what features can indicate the occurrence of the fault. Identify the
+initial moment of the fault. Illustrate your findings with graphics.
+2. Build a simple example of machine learning algorithm that can automatically 
+detect the occurrence of this failure.
+
+Available data:
+PV module output current (I)
+PV module output voltage (V)
+PV module output power (P)
+POA irradiance (G)
+Module temperature (MT)
+Air temperature (T)
+Clear sky index (ClearSky)
+
+* Hint: Under clear sky every thing looks brighter!
+
+
+# Challenge 3: The insulation resistance (RISO) fault is a high resistance short-circuit, where the overcurrent is not enough to blow the fuses, thus it remains undetected. It causes the decrease of the insulation resistance below the normal level, usually above 3MΩ. A low Riso might cause intermittent operation of the inverter, resulting in energy losses. Moreover, any subsequent ground fault will result in a fault current that may bypass the fuse protection and cause severe damage to the array.
+The detection of RISO faults requires direct measurements in the array circuit, for example, using a pulse generator to send a high-frequency signal into the faulted system and tracing the signal to locate the fault. Alternatively, detection can be done indirectly through the consequences of the RISO fault, such as late starting time or intermittent operation of the inverter.
+Can you find any of the sympthoms of RISO fault in the inverter data provided?
+1. Search for the occurrence of RISO fault in the dataset provided. Indicate the moment of a probable RISO fault.
+2. Suggest a logic to automatically identify similar RISO fault patterns in other datasets. 
+3. (Optional) Implement the suggested logic in an algorithm.
+
+Available data:
+Inverter MPPT input current (I)
+Inverter MPPT input voltage (V)
+POA irradiance (G)
+Module temperature (MT)
+Air temperature (T)
+PV Array information: 
+number of modules per string
+number of strings in parallel
+PV module characteristics
+
+
+# Challenge 4: A PV system is expected to degrade slowly over its lifetime. A client provided one year of monitoring data from his/her PV system and wants to know if its degradation is above expected or not. According to the system's age and the degradation rate informed by the PV module manufacturer, the power output of a PV system should be 6.7% degraded. What would be your answer to the client? 
+1. Present the results of your analysis with an overall explanation of the methods addopted and the assumptions made. Feel free to do the assumptions you think are needed to perform the analysis.
+
+Available data:
+Inverter MPPT input current (I)
+Inverter MPPT input voltage (V)
+POA irradiance (G)
+Module temperature (MT)
+Air temperature (T)
+PV Array information: 
+number of modules per string
+number of strings in parallel
+PV module characteristics
+
+
+
